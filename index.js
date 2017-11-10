@@ -15,16 +15,24 @@ function onLoadFunct() {
             if (value !== -0) {
                 el.innerHTML = '<input type="checkbox" id="check' + n + '">' + document.getElementById("item").value + del
                 list.insertBefore(el, list.childNodes[0])
+                unselect.insertBefore(el, unselect.childNodes[0])
             }
             //reset input
             document.getElementById("item").value = ""
-            // number of items
+            // number of items list
             var sum = document.getElementById('list').getElementsByTagName('li')
             var item = 0
             for (i = 0; i < sum.length; i++) {
                 item += 1
             }
             document.getElementById('sum').innerHTML = 'number of items ' + item
+            // number of items unselect
+            var sum = document.getElementById('unselect').getElementsByTagName('li')
+            var item = 0
+            for (i = 0; i < sum.length; i++) {
+                item += 1
+            }
+            document.getElementById('sum').innerHTML = 'number of unchecked ' + item
         }, false)
     }
     //event for button all
