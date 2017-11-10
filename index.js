@@ -2,6 +2,7 @@ function onLoadFunct() {
     //event for button submit
     var click = document.getElementById('submit')
     var n = 0 //variable for assign an id
+    var item = 0
     if (click) {
         click.addEventListener('click', function (event) {
             event.stopPropagation()
@@ -14,28 +15,16 @@ function onLoadFunct() {
             var value = -document.getElementById("item").value
             if (value !== -0) {
                 el.innerHTML = '<input type="checkbox" id="check' + n + '">' + document.getElementById("item").value + del
-                list.insertBefore(el, list.childNodes[0])
                 unselect.insertBefore(el, unselect.childNodes[0])
+                var sum = document.getElementById('unselect').getElementsByTagName('li')
+                item = sum.length
+                document.getElementById('sum').innerHTML = 'number of unchecked ' + item
             }
             //reset input
             document.getElementById("item").value = ""
-            // number of items list
-            var sum = document.getElementById('list').getElementsByTagName('li')
-            var item = 0
-            for (i = 0; i < sum.length; i++) {
-                item += 1
-            }
-            document.getElementById('sum').innerHTML = 'number of items ' + item
-            // number of items unselect
-            var sum = document.getElementById('unselect').getElementsByTagName('li')
-            var item = 0
-            for (i = 0; i < sum.length; i++) {
-                item += 1
-            }
-            document.getElementById('sum').innerHTML = 'number of unchecked ' + item
         }, false)
     }
-    //event for button all
+//event for button all
     var all = document.getElementById('all')
     if (all) {
         all.addEventListener('click', function (event) {
@@ -49,16 +38,9 @@ function onLoadFunct() {
             document.getElementById('list').style.display = 'block'
             document.getElementById('select').style.display = 'none'
             document.getElementById('unselect').style.display = 'none'
-            // number of items
-            var sum = document.getElementById('list').getElementsByTagName('li')
-            var item = 0
-            for (i = 0; i < sum.length; i++) {
-                item += 1
-            }
-            document.getElementById('sum').innerHTML = 'number of items ' + item
         })
     }
-    //event for button checked
+//event for button checked
     var checked = document.getElementById('checked')
     if (checked) {
         checked.addEventListener('click', function (event) {
@@ -88,16 +70,9 @@ function onLoadFunct() {
             document.getElementById('select').style.display = 'block'
             document.getElementById('list').style.display = 'none'
             document.getElementById('unselect').style.display = 'none'
-            // number of items
-            var sum = document.getElementById('select').getElementsByTagName('li')
-            var item = 0
-            for (i = 0; i < sum.length; i++) {
-                item += 1
-            }
-            document.getElementById('sum').innerHTML = 'number of checked ' + item
         })
     }
-    //event for button unchecked
+//event for button unchecked
     var unchecked = document.getElementById('unchecked')
     if (unchecked) {
         unchecked.addEventListener('click', function (event) {
@@ -128,15 +103,13 @@ function onLoadFunct() {
             document.getElementById('list').style.display = 'none'
             document.getElementById('select').style.display = 'none'
             // number of items
-            var sum = document.getElementById('unselect').getElementsByTagName('li')
-            var item = 0
-            for (i = 0; i < sum.length; i++) {
-                item += 1
-            }
+            sum = document.getElementById('unselect').getElementsByTagName('li')
+            item = sum.length
             document.getElementById('sum').innerHTML = 'number of unchecked ' + item
         })
     }
 }
+
 //delete item
 function Del(id) {
     var el = document.getElementById(id)
