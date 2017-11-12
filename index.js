@@ -105,11 +105,10 @@ function Del(id) {
 function Check() {
     var el = document.getElementsByTagName('li')
     var item = 0
-    document.getElementById('sum').innerHTML = ''
     for (var i = 0; i < el.length; i++) {
         if (el[i].querySelector('input').checked === false) {
             item += 1
-            document.getElementById('sum').innerHTML = 'need to buy ' + item + ' items '
         }
     }
+    document.getElementById('sum').innerHTML = 'need to buy ' + item + ' items '
 }
