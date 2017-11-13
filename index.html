@@ -3,24 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Geekhub list</title>
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="style/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body onload="onLoadFunct()">
 <div id="wrapper">
     <h1>Shopping list</h1>
     <form id="form">
         <input type="text" id="item" name="shopping list"/>
-        <input type="submit" value="Зберегти" id="submit">
-        <div id="sum"></div>
-        <input id="all" type="button" value="All">
-        <input id="checked" type="button" value="bought">
-        <input id="unchecked" type="button" value="need to buy">
-        <ul id="list"></ul>
-        <ul id="select"></ul>
-        <ul id="unselected"></ul>
+        <input type="submit" value="save" id="submit" class="btn">
+        <div>
+            <input id="all" type="button" value="All" class="btn">
+            <input id="checked" type="button" value="bought" class="btn">
+            <input id="unchecked" type="button" value="need to buy" class="btn">
+            <div id="sum"></div>
+            <ul id="list"></ul>
+            <ul id="select"></ul>
+            <ul id="unselected"></ul>
+        </div>
     </form>
 </div>
-
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bin/materialize.min.js"></script>
 </body>
 </html>

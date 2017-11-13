@@ -14,12 +14,12 @@ function onLoadFunct() {
             //create item in list
             var el = document.createElement('li')
             el.id = n
-            var del = '<i class="del" onclick="Del(' + n + ')"></i>'
+            var del = '<i class="del material-icons" onclick="Del(' + n + ')">close</i>'
             //check if input empty -> ignore
             var value = document.getElementById('item').value
             var empty = -value
             if (empty !== -0) {
-                el.innerHTML = '<input type="checkbox" onchange="Check()">' + value + del
+                el.innerHTML = '<input type="checkbox" onchange="Check()" id="item' + n + '"><label for="item' + n +'">' + value + '</label>' + del
                 list.insertBefore(el, list.childNodes[0])
             }
             //reset input

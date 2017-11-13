@@ -30,69 +30,75 @@ table {
   border-spacing: 0; }
 
 body {
-  font: 100% Arial, Verdana, Tahoma;
   color: #1F0B3A;
+  font: 100% "Roboto", sans-serif;
   font-size: 20px; }
 
 #wrapper {
-  width: 675px;
-  overflow: visible;
-  margin: 0 auto;
-  padding: 0;
   position: relative;
-  min-height: 100%; }
+  overflow: visible;
+  width: 675px;
+  min-height: 100%;
+  padding: 0;
+  margin: 0 auto; }
 
 form {
   text-align: center; }
   form ul {
-    list-style: none;
     width: 350px;
-    text-align: left;
+    padding-top: 20px;
     margin: 0 auto;
-    padding-top: 20px; }
-    form ul input {
-      margin-right: 10px; }
-    form ul .del {
-      display: inline-block;
-      background: url("../images/clear.png") center no-repeat;
-      background-size: 28px auto;
-      height: 16px;
-      width: 16px;
-      margin-left: 10px; }
+    text-align: left;
+    list-style: none; }
     form ul li {
       margin-bottom: 10px; }
       form ul li input {
-        height: 18px;
-        width: 18px; }
+        margin-right: 10px; }
+      form ul li [type="checkbox"]:checked + label:before {
+        border-right: 2px solid #8e24aa;
+        border-bottom: 2px solid #8e24aa; }
+      form ul li label {
+        color: #1F0B3A;
+        font-size: 20px !important; }
+@font-face {
+  form ul li {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v31/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format("woff2"); } }
+      form ul li .material-icons {
+        display: inline-block;
+        padding-right: 10px;
+        font-family: "Material Icons";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+        vertical-align: top; }
+  form input {
+    margin-bottom: 25px; }
   form #item {
-    box-sizing: border-box;
-    background-color: transparent;
-    color: rgba(0, 0, 0, 0.87);
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.26);
-    outline: none;
-    padding-left: 5px;
-    box-shadow: none;
-    border-radius: 0px;
-    font-size: 20px;
-    height: 36px;
-    width: 220px; }
-  form #checked, form #unchecked, form #all, form #submit {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    background-color: #8B3D8A;
-    display: inline-block;
-    height: 36px;
-    padding: 0 26px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    text-align: center;
-    vertical-align: middle; }
+    width: 255px;
+    height: 30px;
+    font-size: 20px; }
+    form #item:focus:not([readonly]) {
+      border-bottom: 1px solid #8e24aa;
+      box-shadow: 0 1px 0 0 #8e24aa; }
+    form #item:focus:not([readonly]) + label {
+      color: #8e24aa; }
+  form .btn {
+    background-color: #8e24aa; }
+    form .btn:focus {
+      background-color: #6b1b80; }
+    form .btn:hover {
+      background-color: #b02ed3; }
 
 h1 {
   padding-top: 20px;
@@ -102,8 +108,11 @@ h1 {
 
 @media screen {
   #wrapper {
-    max-width: 400px;
+    max-width: 500px;
     width: auto;
-    box-sizing: border-box; } }
+    box-sizing: border-box; }
+
+  li {
+    padding: 0 20px; } }
 
 /*# sourceMappingURL=style.css.map */
