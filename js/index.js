@@ -17,8 +17,7 @@ function onLoadFunct() {
             var del = '<i class="del material-icons" onclick="Del(' + n + ')">close</i>'
             //check if input empty -> ignore
             var value = document.getElementById('item').value
-            var empty = -value
-            if (empty !== -0) {
+            if (document.getElementById('item').replace(/ /g, '')) {
                 el.innerHTML = '<input type="checkbox" onchange="Check()" id="item' + n + '"><label for="item' + n +'">' + value + '</label>' + del
                 list.insertBefore(el, list.childNodes[0])
             }
